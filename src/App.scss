@@ -1,0 +1,49 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+body > div {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding-block-start: 2.375rem;
+    gap: 2.375rem;
+
+    min-height: calc(100vh - 2.375rem);
+    min-height: calc(100svh - 2.375rem);
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+ul[class] {
+    list-style: none;
+    padding: 0;
+}
+
+a[class] {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+svg {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(calc(100% - 2.5rem), 1240px);
+    margin-inline: auto;
+}
