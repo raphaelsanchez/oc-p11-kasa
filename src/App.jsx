@@ -34,9 +34,16 @@ function Root() {
  * @returns {JSX.Element} The rendered App component.
  */
 export function App() {
-    const { data, loading } = useFetch(logements)
+    const { data, loading, error } = useFetch(logements)
 
-    // Si les données sont toujours en cours de chargement, retournez un message de chargement
+    // If there is an error loading the data, return an error message
+    if (error) {
+        return (
+            <div>Erreur lors du chargement des données : {error.message}</div>
+        )
+    }
+
+    // If the data is still loading, return a loading message
     if (loading) {
         return <div>Loading...</div>
     }
