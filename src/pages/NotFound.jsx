@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import notFound404 from '../assets/404.svg'
+import './NotFound.scss'
 
 /**
  * Renders the NotFound page component.
@@ -7,9 +9,9 @@ import { Link } from 'react-router-dom'
  */
 export default function NotFound() {
     return (
-        <main className="container">
-            <h1>404</h1>
-            <p>Oups! La page que vous demandez n'existe pas.</p>
+        <main className="notFound container">
+            <img src={notFound404} alt="" />
+            <h1>Oups! La page que vous demandez n'existe pas.</h1>
             <p>
                 <Link to="/">Retrouner sur la page d'accueil</Link>
             </p>

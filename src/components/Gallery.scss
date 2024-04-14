@@ -1,0 +1,11 @@
+@import "../variables.scss";
+
+.gallery {
+    display: grid;
+    gap: $spacing-medium;
+
+    @media (min-width: 48rem) {
+        gap: $spacing-large;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}

@@ -1,40 +1,12 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import logements from './data/logements.json'
+import { useFetch } from './hooks/useFetch'
 import About from './pages/About'
 import Accommodation from './pages/Accommodation'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-
-/**
- * The router configuration for the application.
- *
- * @type {BrowserRouter}
- */
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root />,
-        children: [
-            {
-                path: '/',
-                element: <Home />,
-            },
-            {
-                path: 'a-propos',
-                element: <About />,
-            },
-            {
-                path: 'logement/:id',
-                element: <Accommodation />,
-            },
-            {
-                path: '*',
-                element: <NotFound />,
-            },
-        ],
-    },
-])
 
 /**
  * Root component of the application.
@@ -57,9 +29,37 @@ function Root() {
  * @returns {JSX.Element} The rendered App component.
  */
 export function App() {
-    return (
-        <RouterProvider router={router}>
-            <Root />
-        </RouterProvider>
-    )
+    const { data, loading } = useFetch(logements)
+
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <Root />,
+            children: [
+                {
+                    path: '/',
+                    element: <Home accommodations={data} loading={loading} />,
+                },
+                {
+                    path: 'a-propos',
+                    element: <About />,
+                },
+                {
+                    path: 'logement/:id',
+                    element: (
+                        <Accommodation
+                            accommodations={data}
+                            loading={loading}
+                        />
+                    ),
+                },
+                {
+                    path: '*',
+                    element: <NotFound />,
+                },
+            ],
+        },
+    ])
+
+    return <RouterProvider router={router} />
 }

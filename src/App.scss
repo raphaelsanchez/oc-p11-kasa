@@ -1,3 +1,4 @@
+@import "./variables";
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -23,8 +24,9 @@ body > div {
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: clamp(1.125rem, 5vw, 2.25rem);
     line-height: 1.1;
+    color: $color-primary;
 }
 
 ul[class] {
@@ -39,11 +41,29 @@ a[class] {
 
 img,
 svg {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
 }
 
 .container {
     width: min(calc(100% - 2.5rem), 1240px);
     margin-inline: auto;
+}
+
+// Screen reader only
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

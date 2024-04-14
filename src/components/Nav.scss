@@ -1,12 +1,14 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 5vw, 2.5rem);
 
+    // Styling for the links inside the nav
     &__link {
-        font-size: 1.5rem;
+        font-size: clamp(0.75rem, 2vw, 1.5rem); // Responsive font size
     }
 
+    // Styling for the active link inside the nav
     &__link.active {
         text-decoration: underline;
         text-underline-offset: 0.25em;
