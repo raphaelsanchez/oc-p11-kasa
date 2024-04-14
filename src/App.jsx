@@ -1,4 +1,9 @@
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {
+    Navigate,
+    Outlet,
+    RouterProvider,
+    createBrowserRouter,
+} from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import logements from './data/logements.json'
@@ -54,8 +59,12 @@ export function App() {
                     ),
                 },
                 {
-                    path: '*',
+                    path: '404',
                     element: <NotFound />,
+                },
+                {
+                    path: '*',
+                    element: <Navigate to="/404" />,
                 },
             ],
         },
