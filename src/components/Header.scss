@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+        width: clamp(9rem, 40vw, 13rem);
+    }
+}

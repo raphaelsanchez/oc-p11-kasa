@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    &__link {
+        font-size: 1.5rem;
+    }
+
+    &__link.active {
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+    }
+}
