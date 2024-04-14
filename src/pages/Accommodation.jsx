@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 // Props type definition
 Accommodation.propTypes = {
     accommodations: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
 }
 
 /**
@@ -13,10 +12,9 @@ Accommodation.propTypes = {
  *
  * @param {Object} props - The component props.
  * @param {Array} props.accommodations - The list of accommodations.
- * @param {boolean} props.loading - The loading state.
  * @returns {JSX.Element} The rendered accommodation component.
  */
-export default function Accommodation({ accommodations, loading }) {
+export default function Accommodation({ accommodations }) {
     const { id } = useParams()
     const navigate = useNavigate()
     const accommodation = Array.isArray(accommodations)
@@ -25,18 +23,10 @@ export default function Accommodation({ accommodations, loading }) {
 
     // Redirect to 404 page if accommodation is not found
     useEffect(() => {
-        if (!loading && !accommodation) {
+        if (!accommodation) {
             navigate('/404')
         }
-    }, [loading, accommodation, navigate])
-
-    if (loading) {
-        return <div>Loading...</div>
-    }
-
-    if (!accommodation) {
-        return <div>An error occurred while loading the data.</div>
-    }
+    }, [accommodation, navigate])
 
     const { cover, title, location } = accommodation
     return (

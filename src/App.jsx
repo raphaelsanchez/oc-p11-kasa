@@ -36,6 +36,11 @@ function Root() {
 export function App() {
     const { data, loading } = useFetch(logements)
 
+    // Si les données sont toujours en cours de chargement, retournez un message de chargement
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -51,12 +56,7 @@ export function App() {
                 },
                 {
                     path: 'logement/:id',
-                    element: (
-                        <Accommodation
-                            accommodations={data}
-                            loading={loading}
-                        />
-                    ),
+                    element: <Accommodation accommodations={data} />,
                 },
                 {
                     path: '404',
