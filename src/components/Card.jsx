@@ -6,8 +6,9 @@ import './Card.scss'
 // PropTypes
 Card.propTypes = {
     accommodation: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        cover: PropTypes.string.isRequired,
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+            .isRequired,
+        cover: PropTypes.string,
         title: PropTypes.string.isRequired,
     }).isRequired,
 }
