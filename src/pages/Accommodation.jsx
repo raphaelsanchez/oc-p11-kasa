@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useScrollToTop } from '../hooks/useScrollToTop'
 
 // Props type definition
 Accommodation.propTypes = {
@@ -15,6 +16,7 @@ Accommodation.propTypes = {
  * @returns {JSX.Element} The rendered accommodation component.
  */
 export default function Accommodation({ accommodations }) {
+    useScrollToTop()
     const { id } = useParams()
     const navigate = useNavigate()
     const accommodation = Array.isArray(accommodations)
@@ -28,10 +30,10 @@ export default function Accommodation({ accommodations }) {
         }
     }, [accommodation, navigate])
 
-    const { cover, title, location } = accommodation
+    const { cover, title, location } = accommodation || {}
     return (
         <main className="container">
-            <img src={cover} alt={`Vue de ${title}`} />
+            {cover && <img src={cover} alt={`Vue de ${title}`} />}
             <h1>{title}</h1>
             {location && <p>{location}</p>}
         </main>
