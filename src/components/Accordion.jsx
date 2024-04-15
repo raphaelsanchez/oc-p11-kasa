@@ -3,13 +3,6 @@ import React, { useRef } from 'react'
 import useAccordion from '../hooks/useAccordion'
 import './Accordion.scss'
 
-// Props type definition
-Accordion.propTypes = {
-    title: PropTypes.string.isRequired,
-    content: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
-        .isRequired,
-}
-
 /**
  * Accordion component
  * @param {Object} props - Accordion props
@@ -17,7 +10,7 @@ Accordion.propTypes = {
  * @param {string | array} props.content - The content of the accordion
  * @returns {JSX.Element} Accordion component JSX
  */
-export default function Accordion({ title, content }) {
+export default function Accordion({ title = '', content = '' }) {
     // Create refs for the details, summary, and content elements
     const detailsRef = useRef()
     const summaryRef = useRef()
@@ -47,4 +40,10 @@ export default function Accordion({ title, content }) {
             </div>
         </details>
     )
+}
+
+// Props type definition
+Accordion.propTypes = {
+    title: PropTypes.string,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 }
