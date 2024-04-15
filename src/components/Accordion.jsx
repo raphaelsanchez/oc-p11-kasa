@@ -21,7 +21,7 @@ export default function Accordion({ title = '', content = '' }) {
 
     // Process the content to render a list or a paragraph depending on the type received
     const processedContent = Array.isArray(content) ? (
-        <ul>
+        <ul className="list">
             {content.map((item, index) => (
                 <li key={index}>{item}</li>
             ))}

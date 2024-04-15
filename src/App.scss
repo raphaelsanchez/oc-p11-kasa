@@ -1,29 +1,35 @@
 @import "./variables";
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
 
+/* Root and Body Styles */
+:root {
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 body {
     padding: 0;
     margin: 0;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    font-weight: 500;
 }
+
 body > div {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding-block-start: 2.375rem;
     gap: 2.375rem;
-
-    font-size: 1.125rem;
-    line-height: 1.5;
-
+    padding-block-start: 2.375rem;
     min-height: calc(100vh - 2.375rem);
     min-height: calc(100svh - 2.375rem);
+}
+
+/* Heading Styles */
+h1,
+h2 {
+    text-wrap: balance;
 }
 
 h1 {
@@ -32,9 +38,17 @@ h1 {
     color: $color-primary;
 }
 
+h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    line-height: 1.2;
+    color: $color-neutral-900;
+}
+
+/* List and Link Styles */
 ul[class] {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 a[class] {
@@ -42,6 +56,7 @@ a[class] {
     color: inherit;
 }
 
+/* Image and SVG Styles */
 img,
 svg {
     max-width: 100%;
@@ -53,12 +68,13 @@ svg {
     shape-margin: 1rem;
 }
 
+/* Container Styles */
 .container {
     width: min(calc(100% - 2.5rem), 1240px);
     margin-inline: auto;
 }
 
-// Screen reader only
+/* Screen Reader Only Styles */
 .sr-only {
     position: absolute;
     width: 1px;
