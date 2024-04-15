@@ -6,11 +6,12 @@ import './TagList.scss'
  * TagList component
  * @param {Object} props - TagList props
  * @param {string[]} props.tags - The tags to display
+ * @param {string} [props.className] - The class name to add
  * @returns {JSX.Element} TagList component JSX
  */
-export default function TagList({ tags }) {
+export default function TagList({ tags, className }) {
     return (
-        <ul className="tagList">
+        <ul className={`tagList ${className}`}>
             {tags.map((tag) => (
                 <li key={tag}>
                     <span className="tag">{tag}</span>
