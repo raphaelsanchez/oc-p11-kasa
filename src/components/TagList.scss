@@ -1,0 +1,17 @@
+@import "../variables.scss";
+
+.tagList {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-block: 0.5rem;
+
+    .tag {
+        display: inline-block;
+        background-color: $color-primary;
+        color: $color-neutral-0;
+        padding: 0.15rem 0.75rem;
+        font-size: 0.875rem;
+        border-radius: 100vmax;
+    }
+}
