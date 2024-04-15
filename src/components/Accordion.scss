@@ -3,18 +3,24 @@
 .accordion {
     background-color: $color-neutral-100;
     border-radius: $radius-small;
+    overflow: hidden;
+
+    &__title,
+    &__content {
+        padding: 1rem;
+    }
+
     &__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: $spacing-medium;
         background-color: $color-primary;
-        border-radius: $radius-small;
         color: $color-neutral-0;
         font-size: 1.125rem;
         font-weight: 700;
         cursor: pointer;
 
+        // Arrow icon
         &::after {
             content: "";
             display: block;
@@ -27,13 +33,9 @@
         }
     }
 
-    &__content {
-        padding: $spacing-medium;
-    }
-}
-
-.accordion[open] {
-    .accordion__title::after {
-        transform: scaleY(-1);
+    &[open] {
+        .accordion__title::after {
+            transform: scaleY(-1);
+        }
     }
 }
