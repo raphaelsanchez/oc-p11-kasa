@@ -2,6 +2,7 @@
 
 .accordion {
     background-color: $color-neutral-100;
+    border-radius: $radius-small;
     &__title {
         display: flex;
         justify-content: space-between;
@@ -13,8 +14,6 @@
         font-size: 1.125rem;
         font-weight: 700;
         cursor: pointer;
-
-        list-style-type: none;
 
         &::after {
             content: "";
