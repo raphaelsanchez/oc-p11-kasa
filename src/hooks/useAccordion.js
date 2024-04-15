@@ -79,11 +79,7 @@ export default function useAccordion(detailsRef, summaryRef, contentRef) {
             // Animate the height of the details element from startHeight to endHeight
             animation = details.animate(
                 { height: [startHeight, endHeight] },
-<<<<<<< HEAD
                 { duration: DURATION, easing: EASING }
-=======
-                { duration: 400, easing: 'ease-out' }
->>>>>>> f7101bcf51719feb9a10886d351e87e9526b3ca1
             )
             animation.onfinish = () => onAnimationFinish(true)
         }
