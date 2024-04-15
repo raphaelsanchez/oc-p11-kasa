@@ -16,7 +16,7 @@ export default function Header() {
                 to="/"
                 aria-label="Revenir à l'accueil"
             >
-                <Logo />
+                <Logo label="Logo Kasa" />
             </NavLink>
             <Nav />
         </header>
