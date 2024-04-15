@@ -3,12 +3,12 @@
 // Styling for the banner component
 .banner {
     position: relative;
-
+    isolation: isolate;
     display: grid;
     place-items: center;
     place-content: center;
-
     border-radius: $radius-large;
+    background-color: $color-primary;
     overflow: hidden;
 
     & > * {
@@ -37,15 +37,10 @@
     }
 
     // Styling for the overlay on the banner
-    &::before {
+    &:has(h1, h2, h3)::before {
         content: "";
         position: absolute;
         inset: 0;
-    }
-
-    // Styling for the overlay on the banner
-    &,
-    &::before {
         background-color: rgba($color-neutral-900, 0.25);
     }
 }
