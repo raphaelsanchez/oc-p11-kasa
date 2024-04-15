@@ -1,6 +1,6 @@
+import useAccordion from '@/hooks/useAccordion'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
-import useAccordion from '../hooks/useAccordion'
 import './Accordion.scss'
 
 /**

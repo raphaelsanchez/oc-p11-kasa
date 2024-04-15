@@ -1,8 +1,8 @@
+import aboutBanner from '@/assets/about-banner.webp'
+import Accordion from '@/components/Accordion'
+import Banner from '@/components/Banner'
+import aboutData from '@/data/about.json'
 import React from 'react'
-import aboutBanner from '../assets/about-banner.webp'
-import Accordion from '../components/Accordion'
-import Banner from '../components/Banner'
-import aboutData from '../data/about.json'
 import './About.scss'
 
 /**

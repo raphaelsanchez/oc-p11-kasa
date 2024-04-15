@@ -1,5 +1,5 @@
+import notFound404 from '@/assets/404.svg'
 import { Link } from 'react-router-dom'
-import notFound404 from '../assets/404.svg'
 import './NotFound.scss'
 
 /**

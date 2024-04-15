@@ -1,7 +1,7 @@
+import homeBanner from '@/assets/home-banner.webp'
+import Banner from '@/components/Banner'
+import Gallery from '@/components/Gallery'
 import React from 'react'
-import homeBanner from '../assets/home-banner.webp'
-import Banner from '../components/Banner'
-import Gallery from '../components/Gallery'
 import './Home.scss'
 
 /**

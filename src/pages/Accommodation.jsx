@@ -1,12 +1,12 @@
+import Accordion from '@/components/Accordion'
+import Banner from '@/components/Banner'
+import Person from '@/components/Person'
+import Rating from '@/components/Rating'
+import TagList from '@/components/TagList'
+import { useScrollToTop } from '@/hooks/useScrollToTop'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import Accordion from '../components/Accordion'
-import Banner from '../components/Banner'
-import Person from '../components/Person'
-import Rating from '../components/Rating'
-import TagList from '../components/TagList'
-import { useScrollToTop } from '../hooks/useScrollToTop'
 import './Accommodation.scss'
 
 // Props type definition

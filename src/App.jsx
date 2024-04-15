@@ -1,17 +1,17 @@
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import logements from '@/data/logements.json'
+import { useFetch } from '@/hooks/useFetch'
+import About from '@/pages/About'
+import Accommodation from '@/pages/Accommodation'
+import Home from '@/pages/Home'
+import NotFound from '@/pages/NotFound'
 import {
     Navigate,
     Outlet,
     RouterProvider,
     createBrowserRouter,
 } from 'react-router-dom'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import logements from './data/logements.json'
-import { useFetch } from './hooks/useFetch'
-import About from './pages/About'
-import Accommodation from './pages/Accommodation'
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
 
 /**
  * Root component of the application.
