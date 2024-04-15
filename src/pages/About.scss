@@ -1,0 +1,7 @@
+@import "../variables";
+.about-sections {
+    display: grid;
+    gap: $spacing-medium;
+    max-width: 64rem;
+    margin: $spacing-large auto;
+}

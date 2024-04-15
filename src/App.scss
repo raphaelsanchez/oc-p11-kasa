@@ -19,6 +19,9 @@ body > div {
     padding-block-start: 2.375rem;
     gap: 2.375rem;
 
+    font-size: 1.125rem;
+    line-height: 1.5;
+
     min-height: calc(100vh - 2.375rem);
     min-height: calc(100svh - 2.375rem);
 }

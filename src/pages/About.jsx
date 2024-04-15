@@ -1,4 +1,9 @@
 import React from 'react'
+import aboutBanner from '../assets/about-banner.webp'
+import Accordion from '../components/Accordion'
+import Banner from '../components/Banner'
+import aboutData from '../data/about.json'
+import './About.scss'
 
 /**
  * Renders the About page component.
@@ -8,7 +13,16 @@ import React from 'react'
 export default function About() {
     return (
         <main className="container">
-            <h1>Welcome to the About page!</h1>
+            <Banner title="À propos" image={aboutBanner} />
+            <section className="about-sections">
+                {aboutData.map((section, index) => (
+                    <Accordion
+                        key={index}
+                        title={section.title}
+                        content={section.content}
+                    />
+                ))}
+            </section>
         </main>
     )
 }
