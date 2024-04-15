@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+:root {
+    --avatar-color-text: #{$color-primary};
+    --avatar-border-radius: #{$radius-full};
+
+    --small-avatar-size: 2em;
+    --large-avatar-size: 4em;
+
+    --small-avatar-spacing: #{$spacing-small};
+    --large-avatar-spacing: #{$spacing-medium};
+}
+
+.person {
+    --avatar-size: var(--small-avatar-size);
+    --avatar-spacing: var(--small-avatar-spacing);
+
+    @media (min-width: 48rem) {
+        --avatar-size: var(--large-avatar-size);
+        --avatar-spacing: var(--large-avatar-spacing);
+    }
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: end;
+    gap: var(--avatar-spacing);
+    margin: 0;
+    color: var(--avatar-color-text);
+
+    &__name {
+        flex: 0;
+        margin-block: 0.5rem;
+        text-align: end;
+        font-size: clamp(0.875rem, 2vw, 1.125rem);
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    &__avatar {
+        width: var(--avatar-size);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: var(--avatar-border-radius);
+    }
+}
