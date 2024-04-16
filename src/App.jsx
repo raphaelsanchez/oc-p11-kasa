@@ -22,9 +22,19 @@ const Home = lazy(() => import('@/pages/Home'))
  * @returns {JSX.Element} The rendered root component.
  */
 function Root() {
+    const links = [
+        { to: '/', label: 'Accueil', ariaLabel: "Aller à la page d'accueil" },
+        {
+            to: '/a-propos',
+            label: 'À propos',
+            ariaLabel: 'Aller à la page À propos',
+        },
+        // Ajoutez plus de liens ici
+    ]
+
     return (
         <>
-            <Header />
+            <Header links={links} />
             <Outlet />
             <Footer />
         </>
