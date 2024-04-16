@@ -1,13 +1,23 @@
+:root {
+    --footer-padding: 3.5rem 1.25rem 0;
+    --footer-gap: 1.25rem;
+    --logo-max-width: 9rem;
+    --footer-background-color: #000;
+    --footer-color: #fff;
+}
+
+// Styles for the Footer component
 .footer {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: var(--footer-gap);
     align-items: center;
-    padding: 3.5rem 1.25rem 0;
-    background-color: black;
-    color: white;
+    padding: var(--footer-padding);
+    background-color: var(--footer-background-color);
+    color: var(--footer-color);
 
+    // Styles for the logo inside the Footer
     .logo {
-        max-width: 9rem;
+        max-width: var(--logo-max-width);
     }
 }

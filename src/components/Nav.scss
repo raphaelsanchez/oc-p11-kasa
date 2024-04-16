@@ -1,16 +1,23 @@
+:root {
+    --nav-gap: clamp(1.5rem, 5vw, 2.5rem);
+    --nav-link-font-size: clamp(0.75rem, 2vw, 1.25rem);
+    --nav-link-active-underline-offset: 0.25em;
+}
+
+// Styles for the Nav component
 .nav {
     display: flex;
     align-items: center;
-    gap: clamp(1.5rem, 5vw, 2.5rem);
+    gap: var(--nav-gap);
 
-    // Styling for the links inside the nav
+    // Styles for the links inside the Nav
     &__link {
-        font-size: clamp(0.75rem, 2vw, 1.25rem); // Responsive font size
+        font-size: var(--nav-link-font-size); // Responsive font size
     }
 
-    // Styling for the active link inside the nav
+    // Styles for the active link inside the Nav
     &__link.active {
         text-decoration: underline;
-        text-underline-offset: 0.25em;
+        text-underline-offset: var(--nav-link-active-underline-offset);
     }
 }

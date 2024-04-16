@@ -1,11 +1,22 @@
 @import "../variables.scss";
 
+:root {
+    --gallery-gap: #{$spacing-medium};
+    --gallery-gap-large: #{$spacing-large};
+    --gallery-min-column-width: 350px;
+}
+
+// Styles for the Gallery component
 .gallery {
     display: grid;
-    gap: $spacing-medium;
+    gap: var(--gallery-gap);
 
+    // Increase the gap and set up a responsive grid for larger screens
     @media (min-width: 48rem) {
-        gap: $spacing-large;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--gallery-gap-large);
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(var(--gallery-min-column-width), 1fr)
+        );
     }
 }

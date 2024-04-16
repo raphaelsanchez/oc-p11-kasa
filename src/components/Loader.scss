@@ -1,49 +1,50 @@
 @import "../variables";
-.loader {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    margin: 100px auto;
+
+:root {
+    --loader-size: 40px;
+    --loader-margin: 100px auto;
+    --loader-animation-duration: 2s;
+    --loader-animation-delay: -1s;
+    --loader-color: #{$color-primary};
+    --loader-opacity: 0.6;
 }
 
+// Styles for the Loader component
+.loader {
+    width: var(--loader-size);
+    height: var(--loader-size);
+    position: relative;
+    margin: var(--loader-margin);
+}
+
+// Styles for the bouncing elements inside the Loader
 .double-bounce1,
 .double-bounce2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: $color-primary;
-    opacity: 0.6;
+    background-color: var(--loader-color);
+    opacity: var(--loader-opacity);
     position: absolute;
     top: 0;
     left: 0;
 
-    -webkit-animation: sk-bounce 2s infinite ease-in-out;
-    animation: sk-bounce 2s infinite ease-in-out;
+    // Use the same animation for both elements
+    animation: sk-bounce var(--loader-animation-duration) infinite ease-in-out;
 }
 
+// Delay the animation of the second element
 .double-bounce2 {
-    -webkit-animation-delay: -1s;
-    animation-delay: -1s;
+    animation-delay: var(--loader-animation-delay);
 }
 
-@-webkit-keyframes sk-bounce {
-    0%,
-    100% {
-        -webkit-transform: scale(0);
-    }
-    50% {
-        -webkit-transform: scale(1);
-    }
-}
-
+// Define the bouncing animation
 @keyframes sk-bounce {
     0%,
     100% {
         transform: scale(0);
-        -webkit-transform: scale(0);
     }
     50% {
         transform: scale(1);
-        -webkit-transform: scale(1);
     }
 }

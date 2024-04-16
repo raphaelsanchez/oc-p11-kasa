@@ -1,9 +1,22 @@
+:root {
+    --header-logo-width-min: 8rem;
+    --header-logo-width-max: 13rem;
+    --header-logo-width-viewport: 25vw;
+}
+
+// Styles for the Header component
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    // Styles for the logo inside the Header
     &__logo {
-        width: clamp(8rem, 25vw, 13rem);
+        // Use clamp() to responsively size the logo
+        width: clamp(
+            var(--header-logo-width-min),
+            var(--header-logo-width-viewport),
+            var(--header-logo-width-max)
+        );
     }
 }

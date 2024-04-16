@@ -1,20 +1,27 @@
 @import "../variables";
 
-// Styles pour le composant Carousel
+:root {
+    --carousel-aspect-ratio: 335 / 255;
+    --carousel-aspect-ratio-large: 1240 / 415;
+    --carousel-text-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.35);
+    --carousel-text-shadow-hover: 0 0.225rem 0.225rem rgba(0, 0, 0, 0.25);
+}
+
+// Styles for the Carousel component
 .carousel {
     position: relative;
     width: 100%;
-    aspect-ratio: 335 /255;
+    aspect-ratio: var(--carousel-aspect-ratio);
     color: $color-neutral-0;
     border-radius: $radius-large;
     overflow: hidden;
 
-    // Modifier l'aspect-ratio pour les écrans plus larges
+    // Change the aspect-ratio for larger screens
     @media (min-width: 48rem) {
-        aspect-ratio: 1240 /415;
+        aspect-ratio: var(--carousel-aspect-ratio-large);
     }
 
-    // Styles pour l'image du Carousel
+    // Styles for the Carousel image
     &__image {
         position: absolute;
         width: 100%;
@@ -28,7 +35,7 @@
         opacity: 1;
     }
 
-    // Styles pour la navigation du Carousel
+    // Styles for the Carousel navigation
     &__nav {
         position: absolute;
         inset: 0;
@@ -36,7 +43,7 @@
         justify-content: space-between;
     }
 
-    // Styles communs pour les boutons précédent et suivant
+    // Common styles for the previous and next buttons
     &__nav-prev,
     &__nav-next {
         display: grid;
@@ -45,22 +52,22 @@
         cursor: pointer;
         color: inherit;
 
-        filter: drop-shadow(0 0.125rem 0.125rem rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(var(--carousel-text-shadow));
         transition: filter 0.3s, transform 0.3s;
 
-        // Augmenter la taille et l'ombre au survol
+        // Increase size and shadow on hover
         &:hover {
             transform: scale3d(1.1, 1.1, 1);
-            filter: drop-shadow(0 0.225rem 0.225rem rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(var(--carousel-text-shadow-hover));
         }
     }
 
-    // Styles spécifiques pour le bouton précédent
+    // Specific styles for the previous button
     &__nav-prev {
         place-content: center start;
     }
 
-    // Styles spécifiques pour le bouton suivant
+    // Specific styles for the next button
     &__nav-next {
         place-content: center end;
     }
@@ -70,15 +77,6 @@
         bottom: $spacing-small;
         left: 50%;
         transform: translateX(-50%);
-        filter: drop-shadow(0 0.125rem 0.125rem rgba(0, 0, 0, 0.5));
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        filter: drop-shadow(var(--carousel-text-shadow));
     }
 }

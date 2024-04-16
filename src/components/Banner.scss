@@ -1,5 +1,13 @@
 @import "../variables.scss";
 
+:root {
+    --banner-title-padding: 1rem;
+    --banner-title-font-size: clamp(1.5rem, 5vw, 3rem);
+    --banner-title-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    --banner-aspect-ratio: 1240 / 223;
+    --banner-background-color: rgba(0, 0, 0, 0.5);
+}
+
 // Styling for the banner component
 .banner {
     position: relative;
@@ -18,10 +26,10 @@
 
     // Styling for the title inside the banner
     &__title {
-        padding: 1rem;
+        padding: var(--banner-title-padding);
         margin: 0;
-        font-size: clamp(1.5rem, 5vw, 3rem);
-        text-shadow: 0 0.25rem 0.25rem rgba($color-neutral-900, 0.25);
+        font-size: var(--banner-title-font-size);
+        text-shadow: var(--banner-title-shadow);
         color: $color-neutral-0;
         z-index: 1;
         text-wrap: balance;
@@ -31,7 +39,7 @@
     &__image {
         width: 100%;
         height: 100%;
-        aspect-ratio: 1240 / 223;
+        aspect-ratio: var(--banner-aspect-ratio);
         object-fit: cover;
         z-index: -1;
     }
@@ -41,6 +49,6 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba($color-neutral-900, 0.25);
+        background-color: var(--banner-background-color);
     }
 }
