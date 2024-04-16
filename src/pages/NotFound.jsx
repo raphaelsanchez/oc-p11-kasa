@@ -11,9 +11,9 @@ export default function NotFound() {
     return (
         <main className="notFound container">
             <img src={notFound404} alt="" />
-            <h1>Oups! La page que vous demandez n'existe pas.</h1>
+            <h1>Oups! La page que vous demandez n&apos;existe pas.</h1>
             <p>
-                <Link to="/">Retrouner sur la page d'accueil</Link>
+                <Link to="/">Retrouner sur la page d&apos;accueil</Link>
             </p>
         </main>
     )

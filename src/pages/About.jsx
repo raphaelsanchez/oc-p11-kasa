@@ -1,8 +1,9 @@
 import aboutBanner from '@/assets/about-banner.webp'
 import Accordion from '@/components/Accordion'
 import Banner from '@/components/Banner'
+import Loader from '@/components/Loader'
 import aboutData from '@/data/about.json'
-import React from 'react'
+import { useFetchData } from '@/hooks/useFetchData'
 import './About.scss'
 
 /**
@@ -11,17 +12,26 @@ import './About.scss'
  * @returns {JSX.Element} The About page component.
  */
 export default function About() {
+    const { isLoading, data } = useFetchData(aboutData)
+
     return (
         <main className="container">
             <Banner title="À propos" image={aboutBanner} />
+
             <section className="about-sections">
-                {aboutData.map((section, index) => (
-                    <Accordion
-                        key={index}
-                        title={section.title}
-                        content={section.content}
-                    />
-                ))}
+                {isLoading ? (
+                    <Loader />
+                ) : !data ? (
+                    <div>Pas de données disponibles</div>
+                ) : (
+                    data.map((section, index) => (
+                        <Accordion
+                            key={index}
+                            title={section.title}
+                            content={section.content}
+                        />
+                    ))
+                )}
             </section>
         </main>
     )

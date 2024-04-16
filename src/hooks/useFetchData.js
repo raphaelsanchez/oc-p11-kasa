@@ -25,15 +25,12 @@ import { useEffect, useState } from 'react'
  * const localData = { key: 'value' }
  * const { data, loading, error } = useFetch(localData)
  */
-export function useFetch(urlOrData) {
-    const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-
-    const handleData = (data) => {
-        setData(data)
-        setLoading(false)
-    }
+export function useFetchData(urlOrData) {
+    const [state, setState] = useState({
+        isLoading: true,
+        data: [],
+        error: null,
+    })
 
     useEffect(() => {
         if (typeof urlOrData === 'string') {
@@ -41,23 +38,16 @@ export function useFetch(urlOrData) {
                 try {
                     const response = await fetch(urlOrData)
                     const data = await response.json()
-                    setData(data)
+                    setState({ isLoading: false, data, error: null })
                 } catch (error) {
-                    console.error(
-                        'Erreur lors de la récupération des données :',
-                        error
-                    )
-                    setError(error)
-                } finally {
-                    setLoading(false)
+                    setState({ isLoading: false, data: null, error: error })
                 }
             }
-
             fetchData()
         } else {
-            handleData(urlOrData)
+            setState({ isLoading: false, data: urlOrData })
         }
     }, [urlOrData])
 
-    return { data, loading, error }
+    return state
 }

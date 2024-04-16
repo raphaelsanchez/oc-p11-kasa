@@ -1,17 +1,19 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import logements from '@/data/logements.json'
-import { useFetch } from '@/hooks/useFetch'
-import About from '@/pages/About'
-import Accommodation from '@/pages/Accommodation'
-import Home from '@/pages/Home'
 import NotFound from '@/pages/NotFound'
+import { lazy, Suspense } from 'react'
 import {
+    createBrowserRouter,
     Navigate,
     Outlet,
     RouterProvider,
-    createBrowserRouter,
 } from 'react-router-dom'
+import Loader from './components/Loader'
+
+// Lazy load pages
+const About = lazy(() => import('@/pages/About'))
+const Accommodation = lazy(() => import('@/pages/Accommodation'))
+const Home = lazy(() => import('@/pages/Home'))
 
 /**
  * Root component of the application.
@@ -34,20 +36,6 @@ function Root() {
  * @returns {JSX.Element} The rendered App component.
  */
 export function App() {
-    const { data, loading, error } = useFetch(logements)
-
-    // If there is an error loading the data, return an error message
-    if (error) {
-        return (
-            <div>Erreur lors du chargement des données : {error.message}</div>
-        )
-    }
-
-    // If the data is still loading, return a loading message
-    if (loading) {
-        return <div>Loading...</div>
-    }
-
     const router = createBrowserRouter([
         {
             path: '/',
@@ -55,15 +43,27 @@ export function App() {
             children: [
                 {
                     path: '/',
-                    element: <Home accommodations={data} loading={loading} />,
+                    element: (
+                        <Suspense fallback={<Loader />}>
+                            <Home />
+                        </Suspense>
+                    ),
                 },
                 {
                     path: 'a-propos',
-                    element: <About />,
+                    element: (
+                        <Suspense fallback={<Loader />}>
+                            <About />
+                        </Suspense>
+                    ),
                 },
                 {
                     path: 'logement/:id',
-                    element: <Accommodation accommodations={data} />,
+                    element: (
+                        <Suspense fallback={<Loader />}>
+                            <Accommodation />
+                        </Suspense>
+                    ),
                 },
                 {
                     path: '404',
