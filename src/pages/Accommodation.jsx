@@ -10,6 +10,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useFetchData } from '../hooks/useFetchData'
 import './Accommodation.scss'
 
+/**
+ * Custom hook to fetch accommodation data based on the provided URL.
+ * @param {string} url - The URL to fetch data from.
+ * @returns {Object} The loading state and the accommodation data.
+ */
 const useAccommodation = (url) => {
     const { isLoading, data: accommodations } = useFetchData(url)
     const { id } = useParams()
@@ -20,6 +25,10 @@ const useAccommodation = (url) => {
     return { isLoading, accommodation }
 }
 
+/**
+ * Accommodation component. Displays accommodation details.
+ * @component
+ */
 export default function Accommodation() {
     useScrollToTop()
     const navigate = useNavigate()
@@ -30,7 +39,7 @@ export default function Accommodation() {
     }
 
     if (!accommodation && !isLoading) {
-        navigate('NotFound')
+        navigate('NotFound') // Redirect to the NotFound page
         return null
     }
 

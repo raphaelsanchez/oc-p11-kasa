@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 import './TagList.scss'
 
 /**
  * TagList component
  * @param {Object} props - TagList props
  * @param {string[]} props.tags - The tags to display
- * @param {string} [props.className] - The class name to add
+ * @param {string} props.className - The class name to add
  * @returns {JSX.Element} TagList component JSX
  */
 export default function TagList({ tags, className }) {
@@ -24,4 +23,5 @@ export default function TagList({ tags, className }) {
 // Prop types definition
 TagList.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    className: PropTypes.string,
 }
