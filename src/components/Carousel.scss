@@ -1,0 +1,84 @@
+@import "../variables";
+
+// Styles pour le composant Carousel
+.carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 335 /255;
+    color: $color-neutral-0;
+    border-radius: $radius-large;
+    overflow: hidden;
+
+    // Modifier l'aspect-ratio pour les écrans plus larges
+    @media (min-width: 48rem) {
+        aspect-ratio: 1240 /415;
+    }
+
+    // Styles pour l'image du Carousel
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    &__image.visible {
+        opacity: 1;
+    }
+
+    // Styles pour la navigation du Carousel
+    &__nav {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // Styles communs pour les boutons précédent et suivant
+    &__nav-prev,
+    &__nav-next {
+        display: grid;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: inherit;
+
+        filter: drop-shadow(0 0.125rem 0.125rem rgba(0, 0, 0, 0.5));
+        transition: filter 0.3s, transform 0.3s;
+
+        // Augmenter la taille et l'ombre au survol
+        &:hover {
+            transform: scale3d(1.1, 1.1, 1);
+            filter: drop-shadow(0 0.225rem 0.225rem rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    // Styles spécifiques pour le bouton précédent
+    &__nav-prev {
+        place-content: center start;
+    }
+
+    // Styles spécifiques pour le bouton suivant
+    &__nav-next {
+        place-content: center end;
+    }
+
+    &__pagination {
+        position: absolute;
+        bottom: $spacing-small;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: drop-shadow(0 0.125rem 0.125rem rgba(0, 0, 0, 0.5));
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

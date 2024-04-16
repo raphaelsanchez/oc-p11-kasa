@@ -1,5 +1,4 @@
 import Accordion from '@/components/Accordion'
-import Banner from '@/components/Banner'
 import Loader from '@/components/Loader'
 import Person from '@/components/Person'
 import Rating from '@/components/Rating'
@@ -7,6 +6,7 @@ import TagList from '@/components/TagList'
 import logementsData from '@/data/logements.json'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { useNavigate, useParams } from 'react-router-dom'
+import Carousel from '../components/Carousel'
 import { useFetchData } from '../hooks/useFetchData'
 import './Accommodation.scss'
 
@@ -52,11 +52,16 @@ export default function Accommodation() {
         tags,
         description,
         equipments,
+        pictures,
     } = accommodation
 
     return (
         <main className="accommodation container">
-            {cover && <Banner image={cover} />}
+            {pictures ? (
+                <Carousel key={pictures} pictures={pictures} />
+            ) : (
+                <img src={cover} alt="Cover image" />
+            )}
             <section className="accommodation__summary">
                 <hgroup className="accommodation__heading">
                     <h1 className="accommodation__title">{title}</h1>
