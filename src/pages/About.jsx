@@ -1,4 +1,4 @@
-import aboutBanner from '@/assets/about-banner.webp'
+import aboutBanner from '@/assets/about-banner.jpg'
 import Accordion from '@/components/Accordion'
 import Banner from '@/components/Banner'
 import Loader from '@/components/Loader'

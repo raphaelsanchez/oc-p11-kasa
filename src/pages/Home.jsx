@@ -1,4 +1,4 @@
-import homeBanner from '@/assets/home-banner.webp'
+import homeBanner from '@/assets/home-banner.jpg'
 import Banner from '@/components/Banner'
 import Gallery from '@/components/Gallery'
 import Loader from '@/components/Loader'
