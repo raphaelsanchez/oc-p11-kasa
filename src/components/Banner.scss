@@ -5,24 +5,32 @@
     --banner-title-font-size: clamp(1.5rem, 5vw, 3rem);
     --banner-title-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
     --banner-aspect-ratio: 1240 / 223;
+    --banner-border-radius: #{$radius-small};
     --banner-background-color: rgba(0, 0, 0, 0.5);
+    --banner-min-height: 6.875rem;
+    @media (min-width: 48rem) {
+        --banner-min-height: 14rem;
+        --banner-border-radius: #{$radius-large};
+    }
 }
 
 // Styling for the banner component
 .banner {
     position: relative;
-    isolation: isolate;
     display: grid;
     place-items: center;
-    place-content: center;
-    border-radius: $radius-large;
+    min-height: var(--banner-min-height);
+    border-radius: var(--banner-border-radius);
     background-color: $color-primary;
+    background-image: linear-gradient(
+            to bottom,
+            var(--banner-background-color),
+            var(--banner-background-color)
+        ),
+        var(--background-image);
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
-
-    & > * {
-        grid-column: 1;
-        grid-row: 1;
-    }
 
     // Styling for the title inside the banner
     &__title {
@@ -33,22 +41,5 @@
         color: $color-neutral-0;
         z-index: 1;
         text-wrap: balance;
-    }
-
-    // Styling for the image inside the banner
-    &__image {
-        width: 100%;
-        height: 100%;
-        aspect-ratio: var(--banner-aspect-ratio);
-        object-fit: cover;
-        z-index: -1;
-    }
-
-    // Styling for the overlay on the banner
-    &:has(h1, h2, h3)::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: var(--banner-background-color);
     }
 }

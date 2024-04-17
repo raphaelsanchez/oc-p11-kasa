@@ -5,6 +5,7 @@ import Loader from '@/components/Loader'
 import accommodationsData from '@/data/logements.json'
 import { useFetchData } from '@/hooks/useFetchData'
 import './Home.scss'
+
 /**
  * Renders the Home page component.
  *

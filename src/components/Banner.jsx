@@ -12,9 +12,11 @@ import './Banner.scss'
  */
 export default function Banner({ title = '', image = '' }) {
     return (
-        <header className="banner">
+        <header
+            className="banner"
+            style={{ '--background-image': `url(${image})` }}
+        >
             {title && <h2 className="banner__title">{title}</h2>}
-            {image && <img className="banner__image" src={image} alt="" />}
         </header>
     )
 }
@@ -23,11 +25,4 @@ export default function Banner({ title = '', image = '' }) {
 Banner.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
-    children: (props, componentName) => {
-        if (!props.title && !props.image) {
-            return new Error(
-                `One of props 'title' or 'image' was not specified in '${componentName}'.`
-            )
-        }
-    },
 }

@@ -26,7 +26,7 @@ export default function Header({ links = [] }) {
 
 // PropTypes definition
 Header.propTypes = {
-    links: PropTypes.arrayOf(
+    links: PropTypes.objectOf(
         PropTypes.shape({
             to: PropTypes.string.isRequired,
             label: PropTypes.string.isRequired,
