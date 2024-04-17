@@ -1,0 +1,12 @@
+{
+    "home": {
+        "to": "/",
+        "label": "Accueil",
+        "ariaLabel": "Aller à la page d'accueil"
+    },
+    "about": {
+        "to": "/a-propos",
+        "label": "À propos",
+        "ariaLabel": "Aller à la page À propos"
+    }
+}

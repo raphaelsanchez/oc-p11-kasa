@@ -4,12 +4,13 @@ import './Nav.scss'
 
 /**
  * Renders the navigation component.
- * @param {Array} links - An array of link objects.
+ * @param {JSON} links - An array of link objects.
  * @param {string} links.to - The URL of the link.
  * @param {string} links.label - The label of the link.
  * @param {string} links.ariaLabel - The aria-label of the link.
  * @returns {JSX.Element} The rendered navigation component.
  */
+
 export default function Nav({ links }) {
     if (!links || Object.keys(links).length === 0) {
         return null
@@ -34,6 +35,8 @@ export default function Nav({ links }) {
     )
 }
 
+// PropTypes definition
+
 Nav.propTypes = {
     links: PropTypes.objectOf(
         PropTypes.shape({
@@ -41,5 +44,5 @@ Nav.propTypes = {
             label: PropTypes.string.isRequired,
             ariaLabel: PropTypes.string.isRequired,
         })
-    ).isRequired,
+    ),
 }

@@ -1,3 +1,4 @@
+import links from '@/data/mainNav.json'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import './Header.scss'
@@ -9,7 +10,7 @@ import Nav from './Nav'
  * @param {Object[]} links - The links to display in the header.
  * @returns {JSX.Element} The header component.
  */
-export default function Header({ links = [] }) {
+export default function Header() {
     return (
         <header className="header container">
             <NavLink
