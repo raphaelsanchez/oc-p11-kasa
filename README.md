@@ -1,6 +1,10 @@
 # Kasa
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8f339f27-2b3e-4ea1-9d7d-3e790d941686/deploy-status)](https://app.netlify.com/sites/nimble-cendol-ed457b/deploys)
+
 Projet fictif réalisé dans le cadre du programme de formation Développeur Front-end JavaScript React chez OpenClassrooms
+
+[Voir la version live](https://nimble-cendol-ed457b.netlify.app/)
 
 ## Context du projet
 
