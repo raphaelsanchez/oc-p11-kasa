@@ -9,4 +9,5 @@ export default defineConfig({
             '@': '/src',
         },
     },
+    base: '/oc-p11-kasa/',
 })
