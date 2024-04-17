@@ -2,7 +2,7 @@
     "name": "oc-p12-kasa",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://raphaelsanchez.github.io/oc-p11-kasa",
+    "homepage": "https://raphaelsanchez.github.io/oc-p11-kasa/",
     "type": "module",
     "scripts": {
         "dev": "vite",
