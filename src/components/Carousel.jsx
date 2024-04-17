@@ -5,6 +5,7 @@ import './Carousel.scss'
 
 /**
  * Carousel component. Displays a carousel of images.
+ * 
  * @param {Array} pictures - An array of image URLs.
  * @returns {JSX.Element} The rendered Carousel component.
  */

@@ -5,7 +5,6 @@ import './Gallery.scss'
 /**
  * Gallery component that displays a list of accommodations.
  *
- * @component
  * @param {Object[]} props.accommodations - The accommodations to display.
  * @returns {React.Element} The rendered Gallery component.
  */

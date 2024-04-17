@@ -5,7 +5,6 @@ import './Card.scss'
 /**
  * AccommodationCard component that displays a card for an accommodation.
  *
- * @component
  * @param {Object} props.accommodation - The accommodation to display.
  * @returns {React.Element} The rendered AccommodationCard component.
  */

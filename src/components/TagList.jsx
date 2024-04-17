@@ -3,6 +3,7 @@ import './TagList.scss'
 
 /**
  * TagList component
+ *
  * @param {Object} props - TagList props
  * @param {string[]} props.tags - The tags to display
  * @param {string} props.className - The class name to add

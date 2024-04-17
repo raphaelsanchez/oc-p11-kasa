@@ -3,7 +3,6 @@ import Logo from './Logo'
 
 /**
  * Footer component.
- * Renders the footer section of the page.
  *
  * @returns {JSX.Element} The rendered footer component.
  */

@@ -12,6 +12,7 @@ import './Accommodation.scss'
 
 /**
  * Custom hook to fetch accommodation data based on the provided URL.
+ *
  * @param {string} url - The URL to fetch data from.
  * @returns {Object} The loading state and the accommodation data.
  */

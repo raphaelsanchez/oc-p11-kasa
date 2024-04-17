@@ -102,5 +102,5 @@ export default function useAccordion(detailsRef, summaryRef, contentRef) {
         return () => {
             summary.removeEventListener('click', onClick)
         }
-    }, [])
+    }, [detailsRef, summaryRef, contentRef])
 }

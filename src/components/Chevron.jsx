@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 /**
  * Renders a Chevron component.
  *
- * @component
  * @param {Object} props - The component props.
  * @param {string} props.direction - The direction of the chevron ('left' or 'right').
  * @param {string} [props.color='currentColor'] - The color of the chevron.

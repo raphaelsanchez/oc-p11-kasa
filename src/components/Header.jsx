@@ -7,6 +7,7 @@ import Nav from './Nav'
 
 /**
  * Represents the header component of the application.
+ *
  * @param {Object[]} links - The links to display in the header.
  * @returns {JSX.Element} The header component.
  */

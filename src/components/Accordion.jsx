@@ -5,6 +5,7 @@ import './Accordion.scss'
 
 /**
  * Accordion component
+ *
  * @param {Object} props - Accordion props
  * @param {string} props.title - The title of the accordion
  * @param {string | array} props.content - The content of the accordion

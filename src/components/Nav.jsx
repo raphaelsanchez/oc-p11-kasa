@@ -4,6 +4,7 @@ import './Nav.scss'
 
 /**
  * Renders the navigation component.
+ * 
  * @param {JSON} links - An array of link objects.
  * @param {string} links.to - The URL of the link.
  * @param {string} links.label - The label of the link.

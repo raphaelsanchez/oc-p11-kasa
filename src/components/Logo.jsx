@@ -2,7 +2,6 @@ import { PropTypes } from 'prop-types'
 /**
  * Logo component.
  *
- * @component
  * @param {string} color - The color of the logo. Default is '#FF6060'.
  * @param {number|string} width - The width of the logo. Default is '211'.
  * @param {number|string} height - The height of the logo. Default is '68'.

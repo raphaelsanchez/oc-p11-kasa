@@ -3,6 +3,7 @@ import './Person.scss'
 
 /**
  * Person component
+ *
  * @param {Object} props - Person props
  * @param {string} props.name - The name of the person
  * @param {string} props.avatar - The URL of the avatar of the person

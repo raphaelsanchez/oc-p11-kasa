@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 
 /**
  * Star component
+ *
  * @param {Object} props - Star props
  * @param {string} props.fill - The fill color of the star
  * @returns {JSX.Element} Star component JSX

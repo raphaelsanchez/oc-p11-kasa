@@ -4,7 +4,6 @@ import './Banner.scss'
 /**
  * Banner component that displays an image and an optional title.
  *
- * @component
  * @param {Object} props - The props of the component.
  * @param {string} props.title - The title to display. If not provided, no title will be displayed.
  * @param {string} props.image - The URL of the image to display.
