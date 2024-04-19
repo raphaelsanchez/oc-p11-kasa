@@ -5,7 +5,7 @@ import './Carousel.scss'
 
 /**
  * Carousel component. Displays a carousel of images.
- * 
+ *
  * @param {Array} pictures - An array of image URLs.
  * @returns {JSX.Element} The rendered Carousel component.
  */
@@ -36,25 +36,28 @@ export default function Carousel({ pictures }) {
                     alt={`Slide ${index + 1}`}
                 />
             ))}
-            <div className="carousel__pagination">
-                {currentImageIndex + 1} / {pictures.length}
-            </div>
-            <div className="carousel__nav">
-                <button
-                    className="carousel__nav-prev"
-                    onClick={handlePrevClick}
-                    aria-label="Précédent"
-                >
-                    <Chevron direction="left" />
-                </button>
-                <button
-                    className="carousel__nav-next"
-                    onClick={handleNextClick}
-                    aria-label="Suivant"
-                >
-                    <Chevron direction="right" />
-                </button>
-            </div>
+
+            {pictures.length > 1 && (
+                <div className="carousel__nav">
+                    <div className="carousel__pagination">
+                        {currentImageIndex + 1} / {pictures.length}
+                    </div>
+                    <button
+                        className="carousel__nav-prev"
+                        onClick={handlePrevClick}
+                        aria-label="Précédent"
+                    >
+                        <Chevron direction="left" />
+                    </button>
+                    <button
+                        className="carousel__nav-next"
+                        onClick={handleNextClick}
+                        aria-label="Suivant"
+                    >
+                        <Chevron direction="right" />
+                    </button>
+                </div>
+            )}
         </div>
     )
 }
