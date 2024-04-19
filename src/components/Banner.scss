@@ -8,7 +8,7 @@
     --banner-border-radius: #{$radius-small};
     --banner-background-color: rgba(0, 0, 0, 0.5);
     --banner-min-height: 6.875rem;
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-medium) {
         --banner-min-height: 14rem;
         --banner-border-radius: #{$radius-large};
     }

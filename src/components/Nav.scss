@@ -1,3 +1,4 @@
+@import "../variables";
 :root {
     --nav-gap: clamp(1.5rem, 5vw, 2.5rem);
     --nav-link-font-size: clamp(0.75rem, 2vw, 1.25rem);
@@ -13,6 +14,10 @@
     // Styles for the links inside the Nav
     &__link {
         font-size: var(--nav-link-font-size); // Responsive font size
+        text-transform: uppercase;
+        @media (min-width: $breakpoint-medium) {
+            text-transform: none;
+        }
     }
 
     // Styles for the active link inside the Nav

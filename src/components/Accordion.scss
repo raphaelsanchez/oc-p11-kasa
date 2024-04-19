@@ -1,14 +1,20 @@
 @import "../variables.scss";
 
 :root {
-    --accordion-padding: 0.875rem 1rem;
-    --accordion-title-size: 1.125rem;
+    --accordion-padding: 0.625rem;
+    --accordion-title-size: 0.812rem;
+    --accordion-content-size: 0.875rem;
     --accordion-icon-size: 1.5em;
     --accordion-background-color: #{$color-neutral-100};
     --accordion-border-radius: #{$radius-small};
     --accordion-title-background-color: #{$color-primary};
     --accordion-title-color: #{$color-neutral-0};
     --accordion-title-weight: 700;
+    @media (min-width: $breakpoint-medium) {
+        --accordion-padding: 0.875rem 1rem;
+        --accordion-title-size: 1.125rem;
+        --accordion-content-size: 1rem;
+    }
 }
 
 .accordion {
@@ -42,6 +48,14 @@
             background-size: contain;
             background-position: center;
             transition: transform 0.3s;
+        }
+    }
+
+    &__content {
+        font-size: var(--accordion-content-size);
+
+        p:first-of-type {
+            margin-block-start: 0;
         }
     }
 

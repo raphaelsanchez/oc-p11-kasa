@@ -6,7 +6,7 @@
     --avatar-font-size: clamp(0.875rem, 2vw, 1.125rem);
     --avatar-color-text: #{$color-primary};
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-medium) {
         --avatar-size: 4rem; // Large avatar size for larger screens
         --avatar-spacing: #{$spacing-small}; // Large avatar spacing for larger screens
     }

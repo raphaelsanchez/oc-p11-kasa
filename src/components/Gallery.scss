@@ -12,7 +12,7 @@
     gap: var(--gallery-gap);
 
     // Increase the gap and set up a responsive grid for larger screens
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-medium) {
         gap: var(--gallery-gap-large);
         grid-template-columns: repeat(
             auto-fill,

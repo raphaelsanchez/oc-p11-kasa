@@ -17,7 +17,7 @@
     overflow: hidden;
 
     // Change the aspect-ratio for larger screens
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-medium) {
         aspect-ratio: var(--carousel-aspect-ratio-large);
     }
 

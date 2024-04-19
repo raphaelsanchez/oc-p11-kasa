@@ -4,7 +4,7 @@
     --card-aspect-ratio: 335 / 255;
     --card-title-font-size: 1.125rem;
     --card-padding: #{$spacing-medium};
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-medium) {
         --card-aspect-ratio-large: 1 / 1;
     }
 }
