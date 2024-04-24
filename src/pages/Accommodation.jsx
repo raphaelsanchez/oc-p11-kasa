@@ -40,7 +40,7 @@ export default function Accommodation() {
     }
 
     if (!accommodation && !isLoading) {
-        navigate('NotFound') // Redirect to the NotFound page
+        navigate('404') // Redirect to the NotFound page
         return null
     }
 

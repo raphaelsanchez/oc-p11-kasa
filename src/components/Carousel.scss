@@ -17,7 +17,7 @@
     overflow: hidden;
 
     // Change the aspect-ratio for larger screens
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-small) {
         aspect-ratio: var(--carousel-aspect-ratio-large);
     }
 
@@ -78,5 +78,8 @@
         left: 50%;
         transform: translateX(-50%);
         filter: drop-shadow(var(--carousel-text-shadow));
+        @media (max-width: $breakpoint-medium) {
+            display: none;
+        }
     }
 }
