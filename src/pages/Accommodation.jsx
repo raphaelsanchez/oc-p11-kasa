@@ -5,6 +5,7 @@ import Rating from '@/components/Rating'
 import TagList from '@/components/TagList'
 import logementsData from '@/data/logements.json'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
+import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Carousel from '../components/Carousel'
 import { useFetchData } from '../hooks/useFetchData'
@@ -35,12 +36,17 @@ export default function Accommodation() {
     const navigate = useNavigate()
     const { isLoading, accommodation } = useAccommodation(logementsData)
 
+    useEffect(() => {
+        if (!accommodation && !isLoading) {
+            navigate('/404') // Redirect to the NotFound page
+        }
+    }, [accommodation, isLoading, navigate])
+
     if (isLoading) {
         return <Loader />
     }
 
-    if (!accommodation && !isLoading) {
-        navigate('404') // Redirect to the NotFound page
+    if (!accommodation) {
         return null
     }
 
